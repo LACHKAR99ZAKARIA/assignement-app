@@ -1,0 +1,22 @@
+<title>{{title}}</title>
+<form ngForm #assignmentForm>
+    <button mat-stroked-button 
+           color="primary">
+      Ajouter un devoir
+    </button>
+</form>
+<div class="container"><h2>{{title}}</h2>
+
+    <div *ngFor="let assignment of assignements" [ngClass]="{'rendu': assignment.rendu ,'nrendu': !assignment.rendu}">
+        <p appRendu *ngIf="assignment.rendu; else nonsoumis">
+            Devoir intitulé {{assignment.nom}}, rendu le 
+                                      {{assignment.dateDeRendu}}.
+        </p>
+        <ng-template #nonsoumis>
+            <p app>
+                Le devoir {{assignment.nom}} n'a pas été rendu.
+            </p>
+        </ng-template>
+     </div>
+     
+</div>
