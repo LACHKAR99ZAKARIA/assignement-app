@@ -24,4 +24,10 @@ export class AssignmentsComponent {
       rendu:false
     },
   ]
+
+
+  onSubmit(event:any){
+    console.log(event)
+    console.log("formulaire Soumis")
+  }
 }

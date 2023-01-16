@@ -1,7 +1,7 @@
 <title>{{title}}</title>
-<form ngForm #assignmentForm>
-    <button mat-stroked-button 
-           color="primary">
+<form ngForm (submit)="onSubmit($event)" #assignmentForm>
+    <input type="text" name="" id="">
+    <button mat-stroked-button color="primary">
       Ajouter un devoir
     </button>
 </form>
@@ -13,7 +13,7 @@
                                       {{assignment.dateDeRendu}}.
         </p>
         <ng-template #nonsoumis>
-            <p app>
+            <p appNrendu>
                 Le devoir {{assignment.nom}} n'a pas été rendu.
             </p>
         </ng-template>
